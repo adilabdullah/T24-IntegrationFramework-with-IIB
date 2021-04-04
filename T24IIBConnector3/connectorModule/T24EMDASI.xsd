@@ -1,0 +1,42 @@
+<xs:schema targetNamespace="http://www.ibm.com/xmlns/prod/websphere/j2ca/t24emd/metadata"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:asi="http://www.ibm.com/xmlns/prod/websphere/j2ca/t24emd/metadata"
+           elementFormDefault="qualified">
+
+	<!-- ASI supported at BO-level in business object definitions -->
+	<xs:complexType name="BusinessObjectTypeMetadata">
+		<xs:sequence minOccurs="0" maxOccurs="1">
+			<xs:element name="ObjectName" type="xs:string"/>
+			<xs:element name="SupportedVerbs" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Create" type="asi:VerbTypeMetadata"/>
+						<xs:element name="Update" type="asi:VerbTypeMetadata"/>
+						<xs:element name="Delete" type="asi:VerbTypeMetadata"/>
+						<xs:element name="Retrieve" type="asi:VerbTypeMetadata"/>
+						<xs:element name="RetrieveAll" type="asi:VerbTypeMetadata"/>
+						<xs:element name="UpdateWithDelete" type="asi:VerbTypeMetadata"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!-- ASI supported per top-level verb -->	
+	<xs:complexType name="VerbTypeMetadata">
+		<xs:sequence minOccurs="0" maxOccurs="1">
+			<xs:element name="MethodName" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<!-- ASI supported at property-level in business object definitions -->	
+	<xs:complexType name="PropertyTypeMetadata">
+		<xs:sequence minOccurs="0" maxOccurs="1">
+			<xs:element name="PrimaryKey" type="xs:boolean"/>
+			<xs:element name="ForeignKeyBORef" type="xs:string"/>
+			<xs:element name="FieldName" type="xs:string"/>
+			<xs:element name="FieldType" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connector id="Connector_ID" version="1.5"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/connector_1_5.xsd">
+	<display-name>T24 Enterprise Metadata Discovery</display-name>
+	<icon>
+	</icon>
+	<vendor-name>Temenos</vendor-name>
+	<eis-type>T24</eis-type>
+	<resourceadapter-version>7.0</resourceadapter-version>
+	<license>
+		<description>
+		</description>
+		<license-required>false</license-required>
+	</license>
+	<resourceadapter>
+		<resourceadapter-class>com.temenos.adapter.wmb.emd.T24ResourceAdapter</resourceadapter-class>
+		<outbound-resourceadapter>
+			<connection-definition>
+				<managedconnectionfactory-class>com.temenos.adapter.wmb.emd.outbound.T24ManagedConnectionFactory</managedconnectionfactory-class>
+				<connectionfactory-interface>javax.resource.cci.ConnectionFactory</connectionfactory-interface>
+				<connectionfactory-impl-class>com.temenos.adapter.wmb.emd.outbound.T24ConnectionFactory</connectionfactory-impl-class>
+				<connection-interface>javax.resource.cci.Connection</connection-interface>
+				<connection-impl-class>com.temenos.adapter.wmb.emd.outbound.T24Connection</connection-impl-class>
+			</connection-definition>
+			<transaction-support>NoTransaction</transaction-support>
+			<reauthentication-support>false</reauthentication-support>
+		</outbound-resourceadapter>
+		<inbound-resourceadapter>
+			<messageadapter>
+				<messagelistener>
+					<messagelistener-type>commonj.connector.runtime.InboundListener</messagelistener-type>
+					<activationspec>
+						<activationspec-class>com.temenos.adapter.wmb.emd.inbound.T24ActivationSpecWithXid</activationspec-class>
+						<required-config-property>
+							<description>
+  							</description>
+							<config-property-name>eventName</config-property-name>
+						</required-config-property>
+					</activationspec>
+				</messagelistener>
+			</messageadapter>
+		</inbound-resourceadapter>
+		<security-permission>
+			<security-permission-spec>grant {permission java.util.logging.LoggingPermission control;};</security-permission-spec>
+		</security-permission>
+	</resourceadapter>
+</connector>

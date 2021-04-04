@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emd:discoveryService xmlns:emd="commonj.connector"
+	xmlns:j2ee="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/j2ee_1_4.xsd">
+	<j2ee:description>T24EMD</j2ee:description>
+	<j2ee:display-name>T24EMD</j2ee:display-name>
+	<emd:vendor-name xsi:type="j2ee:xsdStringType">Temenos</emd:vendor-name>
+	<emd:version xsi:type="j2ee:xsdStringType">1.0.0</emd:version>
+	<emd:spec-version>1.2</emd:spec-version>
+	<emd:discoveryService-class
+		xsi:type="j2ee:fully-qualified-classType">
+		com.temenos.adapter.wmb.emd.discovery.T24MetadataDiscovery
+	</emd:discoveryService-class>
+	<emd:metadataEdit-class xsi:type="j2ee:fully-qualified-classType">
+		com.temenos.adapter.wmb.emd.discovery.T24MetadataEdit
+	</emd:metadataEdit-class>
+	<emd:application-specific-schema>
+		<j2ee:description>T24EMD ASI schema</j2ee:description>
+		<j2ee:display-name>T24EMD ASI schema</j2ee:display-name>
+		<emd:asiNSURI>
+			http://www.yourcompany.com/xmlns/prod/websphere/j2ca/t24emd/metadata
+		</emd:asiNSURI>
+		<emd:asiSchemaLocation>T24EMDASI.xsd</emd:asiSchemaLocation>
+	</emd:application-specific-schema>
+</emd:discoveryService>

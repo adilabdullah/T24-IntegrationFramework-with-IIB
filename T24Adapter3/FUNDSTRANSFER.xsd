@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.temenos.com/T24/event/FUNDSTRANSFER/FUNDSTRANSFER/fundstransfer" xmlns:fundstransfer="http://www.temenos.com/T24/event/FUNDSTRANSFER/FUNDSTRANSFER/fundstransfer">
+
+<xsd:annotation xml:space="preserve">
+<xsd:appinfo source="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability">
+<info:resourceAdapter xmlns:info="http://www.ibm.com/xmlns/prod/j2ca/versionCompatability" version="7.5.0.0"/>
+</xsd:appinfo>
+</xsd:annotation>
+
+<xsd:complexType name="FUNDSTRANSFER">
+<xsd:annotation xml:space="preserve">
+
+
+</xsd:annotation>
+<xsd:sequence minOccurs="1" maxOccurs="1">
+</xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>
